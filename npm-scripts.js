@@ -44,7 +44,7 @@ function postinstall() {
     var from = path.join(project.path.config, env + '.sample.json'),
         to = path.join(project.path.config, env + '.json');
     if (!fs.existsSync(to)) {
-      exec(util.format('cp -n %s %s', from, to), function (err) {
+      exec(util.format('cp -u %s %s', from, to), function (err) {
         if (err) {
           console.error(err);
           process.exit(1);
